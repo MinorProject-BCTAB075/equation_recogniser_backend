@@ -6,4 +6,7 @@ views = Blueprint('views', __name__)
 def predict():
     d={}
     if request.method =="POST":
+	# var input = imageFile;
+	
+	# var output = ["answer string here"]
         return jsonify(["Register success"])
