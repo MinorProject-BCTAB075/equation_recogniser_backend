@@ -1,7 +1,7 @@
 import os
 
 from flask import Blueprint, request, json, jsonify
-from werkzeug.utils import secure_filename
+from werkzeug.utils import secure_filename  
 
 from utils import predict_image
 
@@ -31,7 +31,7 @@ def predict():
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 #secure_filename : Pass it a filename and it will return a secure version of it
-                
+
                 file.save(os.path.join(image_store_folder, filename))
                 
                 detected_exp = predict_image(image_store_folder+filename)
