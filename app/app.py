@@ -30,6 +30,8 @@ def predict():
 
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
+                #secure_filename : Pass it a filename and it will return a secure version of it
+                
                 file.save(os.path.join(image_store_folder, filename))
                 
                 detected_exp = predict_image(image_store_folder+filename)
